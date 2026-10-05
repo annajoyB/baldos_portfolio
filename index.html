@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>My Portfolio</title>
+
+
+    <style>
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f8f6f2;
+            color: #171717;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+
+            background: #ffffff;
+
+            border-bottom: 1px solid #ddd8d0;
+
+            z-index: 1000;
+        }
+
+        .navbar {
+            max-width: 1100px;
+            margin: auto;
+
+            height: 75px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 25px;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+
+            color: #171717;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #e85d04;
+        }
+
+        .menu-btn {
+            display: none;
+
+            font-size: 25px;
+
+            cursor: pointer;
+        }
+
+
+        .section {
+            max-width: 1100px;
+
+            margin: auto;
+
+            padding: 110px 25px 80px;
+        }
+
+        .heading {
+            text-align: center;
+
+            margin-bottom: 60px;
+        }
+
+        .heading p {
+            color: #e85d04;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 8px;
+        }
+
+        .heading h2 {
+            font-size: 40px;
+        }
+
+
+        #home {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+
+            padding-top: 120px;
+        }
+
+        .home-container {
+            width: 100%;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+        .home-text p {
+            color: #e85d04;
+
+            font-size: 15px;
+
+            font-weight: bold;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 15px;
+        }
+
+        .home-text h1 {
+            font-size: 65px;
+
+            line-height: 1.05;
+
+            margin-bottom: 20px;
+        }
+
+        .home-text h3 {
+            font-size: 20px;
+
+            font-weight: normal;
+
+            color: #666;
+
+            margin-bottom: 10px;
+        }
+
+        .home-text .school {
+            color: #777;
+
+            font-size: 15px;
+
+            margin-bottom: 30px;
+        }
+
+        .home-image {
+            display: flex;
+
+            justify-content: center;
+        }
+
+        .home-photo {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.photo-frame {
+    width: 350px;
+    height: 430px;
+
+    background: #e85d04;
+
+    padding: 10px;
+
+    transform: rotate(3deg);
+
+    overflow: hidden;
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    display: block;
+
+    transform: rotate(-3deg);
+}
+
+        .btn {
+            display: inline-block;
+
+            padding: 13px 25px;
+
+            background: #171717;
+
+            color: #ffffff;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #e85d04;
+        }
+
+
+
+        .about {
+            display: grid;
+
+            grid-template-columns: 150px 1fr;
+
+            gap: 50px;
+
+            align-items: start;
+        }
+
+
+        .about-content h3 {
+            font-size: 30px;
+
+            margin-bottom: 20px;
+        }
+
+        .about-content p {
+            color: #666;
+
+            margin-bottom: 15px;
+
+            font-size: 16px;
+        }
+
+
+
+        .skills-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 20px;
+        }
+
+
+        .skill-card {
+            background: #ffffff;
+
+            padding: 35px 20px;
+
+            text-align: center;
+
+            border: 1px solid #ddd8d0;
+
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+
+            border-color: #e85d04;
+        }
+
+        .skill-card span {
+            display: block;
+
+            font-size: 35px;
+
+            margin-bottom: 15px;
+        }
+
+        .skill-card h3 {
+            font-size: 18px;
+
+            margin-bottom: 8px;
+        }
+
+        .skill-card p {
+            font-size: 13px;
+
+            color: #777;
+        }
+
+
+.resume {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+}
+
+
+.resume-main {
+    width: 100%;
+
+    background: #ffffff;
+
+    border: 1px solid #ddd8d0;
+
+    border-top: 5px solid #e85d04;
+
+    padding: 40px;
+
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0, 0, 0, 0.06);
+}
+
+
+.resume-part {
+    padding: 10px;
+}
+
+
+.resume-part:first-child {
+    border-right: 1px solid #ddd8d0;
+    padding-right: 50px;
+}
+
+
+.resume-part h3 {
+    font-size: 28px;
+
+    margin-bottom: 30px;
+
+    color: #171717;
+}
+
+
+.resume-item {
+    padding-bottom: 25px;
+
+    margin-bottom: 25px;
+
+    border-bottom: 1px solid #ddd8d0;
+}
+
+
+.resume-item:last-child {
+    border-bottom: none;
+
+    margin-bottom: 0;
+}
+
+
+.resume-item span {
+    display: inline-block;
+
+    color: #e85d04;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    margin-bottom: 5px;
+}
+
+
+.resume-item h4 {
+    font-size: 19px;
+
+    margin: 5px 0 8px;
+}
+
+
+.resume-item p {
+    color: #666;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+.objective {
+    width: 75%;
+
+    margin: 0 auto;
+
+    padding: 40px 50px;
+
+    background: #171717;
+
+    color: white;
+
+    text-align: center;
+
+    border-top: 5px solid #e85d04;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0, 0, 0, 0.10);
+}
+
+
+.objective p {
+    color: #ff8c42;
+
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+    font-weight: bold;
+
+    margin-bottom: 12px;
+}
+
+
+.objective h3 {
+    font-size: 22px;
+
+    font-weight: normal;
+
+    max-width: 750px;
+
+    margin: auto;
+}
+
+        .contact-container {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 60px;
+        }
+
+        .contact-info h3 {
+            font-size: 30px;
+
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            color: #666;
+
+            margin-bottom: 25px;
+        }
+
+        .contact-item {
+            margin-bottom: 20px;
+        }
+
+        .contact-item span {
+            display: block;
+
+            color: #e85d04;
+
+            font-size: 12px;
+
+            font-weight: bold;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 3px;
+        }
+
+        .contact-item p {
+            color: #171717;
+
+            margin: 0;
+        }
+
+
+
+        .contact-form {
+            background: #ffffff;
+
+            padding: 35px;
+
+            border: 1px solid #ddd8d0;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            margin-bottom: 7px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+
+            padding: 12px;
+
+            border: 1px solid #ddd8d0;
+
+            outline: none;
+
+            font-family: inherit;
+
+            font-size: 14px;
+        }
+
+        .form-group textarea {
+            height: 130px;
+
+            resize: vertical;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #e85d04;
+        }
+
+
+        footer {
+            background: #171717;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 40px 20px;
+        }
+
+        footer h3 {
+            margin-bottom: 5px;
+        }
+
+        footer p {
+            color: #aaa;
+
+            font-size: 13px;
+        }
+
+
+        @media (max-width: 850px) {
+
+            .nav-links {
+                position: absolute;
+
+                top: 75px;
+                left: 0;
+
+                width: 100%;
+
+                background: #ffffff;
+
+                display: none;
+
+                flex-direction: column;
+
+                gap: 0;
+
+                border-bottom: 1px solid #ddd8d0;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                padding: 15px 25px;
+
+                border-bottom: 1px solid #eee;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+
+
+            .home-container {
+                grid-template-columns: 1fr;
+
+                text-align: center;
+
+                gap: 40px;
+            }
+
+            .home-image {
+                order: -1;
+            }
+
+            .home-image img {
+                width: 280px;
+                height: 280px;
+            }
+
+            .home-text h1 {
+                font-size: 48px;
+            }
+
+
+
+            .about {
+                grid-template-columns: 1fr;
+
+                gap: 20px;
+            }
+
+            .about-number {
+                font-size: 60px;
+            }
+
+
+            .skills-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+
+            .resume {
+                grid-template-columns: 1fr;
+
+                row-gap: 30px;
+            }
+
+            .objective {
+                grid-column: 1;
+
+                width: 100%;
+            }
+
+
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+        @media (max-width: 500px) {
+
+            .section {
+                padding-left: 18px;
+                padding-right: 18px;
+            }
+
+            .heading h2 {
+                font-size: 32px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .home-text h1 {
+                font-size: 40px;
+            }
+
+            .resume-column {
+                padding: 25px;
+            }
+
+            .objective {
+                padding: 30px 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <header>
+
+        <nav class="navbar">
+
+            <a href="#home" class="logo">
+                My Portfolio
+            </a>
+
+
+            <ul class="nav-links" id="navLinks">
+
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+
+                <li>
+                    <a href="#about">About Me</a>
+                </li>
+
+                <li>
+                    <a href="#skills">Skills</a>
+                </li>
+
+                <li>
+                    <a href="#resume">Resume</a>
+                </li>
+
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+
+            </ul>
+
+
+            <div class="menu-btn" id="menuBtn">
+                ☰
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <section id="home" class="section">
+
+        <div class="home-container">
+
+
+            <div class="home-text">
+
+                <p>
+                    HELLO, I'M
+                </p>
+
+                <h1>
+                    Anna Joy
+                </h1>
+
+                <h3>
+                    Information Technology Student
+                </h3>
+
+                <p class="school">
+                    Visayas State University –
+                    Alang-Alang Campus
+                </p>
+
+                <a href="#about" class="btn">
+                    More About Me
+                </a>
+
+            </div>
+
+
+            <div class="home-photo">
+
+    <div class="photo-frame">
+
+        <img
+            src="image/image.jpeg"
+            alt="Anna Joy">
+
+    </div>
+
+
+        </div>
+
+    </section>
+
+
+    <section id="about" class="section">
+
+        <div class="heading">
+
+            <p>
+                GET TO KNOW ME
+            </p>
+
+            <h2>
+                About Me
+            </h2>
+
+        </div>
+
+
+
+            <div class="about-content">
+
+                <h3>
+                    Information Technology Student
+                </h3>
+
+                <p>
+                    I am an Information Technology student
+                    at Visayas State University –
+                    Alang-Alang Campus.
+                </p>
+
+                <p>
+                    I am interested in technology,
+                    programming, and creating systems
+                    that can help solve real-world
+                    problems.
+                </p>
+
+                <p>
+                    I am continuously developing my
+                    technical skills and gaining
+                    experience through academic
+                    projects and activities.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <section id="skills" class="section">
+
+        <div class="heading">
+
+            <p>
+                MY INTERESTS
+            </p>
+
+            <h2>
+                Skills & Hobbies
+            </h2>
+
+        </div>
+
+
+        <div class="skills-grid">
+
+
+            <div class="skill-card">
+
+                <span>
+                    🏸
+                </span>
+
+                <h3>
+                    Playing Badminton
+                </h3>
+
+                <p>
+                    One of my favorite activities
+                    during my free time.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <span>
+                    📚
+                </span>
+
+                <h3>
+                    Reading
+                </h3>
+
+                <p>
+                    Reading books to expand my knowledge 
+                    and improve my understanding.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <span>
+                    🎧
+                </span>
+
+                <h3>
+                    Listening to Music
+                </h3>
+
+                <p>
+                    Music helps me relax and
+                    enjoy my free time.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <span>
+                    🎬
+                </span>
+
+                <h3>
+                    Watching Dramas
+                </h3>
+
+                <p>
+                    I enjoy watching dramas
+                    in my spare time.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+<section id="resume" class="section">
+
+    <div class="heading">
+
+        <p>
+            MY BACKGROUND
+        </p>
+
+        <h2>
+            Resume
+        </h2>
+
+    </div>
+
+
+    <div class="resume">
+
+
+
+        <div class="resume-main">
+
+
+            <div class="resume-part">
+
+                <h3>
+                    Education
+                </h3>
+
+                <div class="resume-item">
+
+                    <span>
+                        PRESENT
+                    </span>
+
+                    <h4>
+                        Bachelor of Science in
+                        Information Technology
+                    </h4>
+
+                    <p>
+                        Visayas State University –
+                        Alang-Alang Campus
+                    </p>
+
+                </div>
+
+
+                <div class="resume-item">
+
+                    <span>
+                        PREVIOUS
+                    </span>
+
+                    <h4>
+                        Humanities and Social Sciences
+                        (HUMSS) Strand
+                    </h4>
+
+                    <p>
+                        San Miguel National High School
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="resume-part">
+
+                <h3>
+                    Work Experience
+                </h3>
+
+                <div class="resume-item">
+
+                    <span>
+                        01
+                    </span>
+
+                    <h4>
+                        Work Immersion
+                    </h4>
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <div class="objective">
+
+            <p>
+                CAREER OBJECTIVE
+            </p>
+
+            <h3>
+                To gain experience and develop my
+                skills in the field of Information
+                Technology.
+            </h3>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+    <section id="contact" class="section">
+
+        <div class="heading">
+
+            <p>
+                GET IN TOUCH
+            </p>
+
+            <h2>
+                Contact Me
+            </h2>
+
+        </div>
+
+
+
+        <div class="contact-container">
+
+
+            <div class="contact-info">
+
+                <h3>
+                    Let's Connect
+                </h3>
+
+                <p>
+                    If you would like to get in touch
+                    with me, you can contact me using
+                    the information below.
+                </p>
+
+
+                <div class="contact-item">
+
+                    <span>
+                        EMAIL
+                    </span>
+
+                    <p>
+                        annajoy102006@gmail.com
+                    </p>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <span>
+                        PHONE
+                    </span>
+
+                    <p>
+                        09934140786
+                    </p>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <span>
+                        LOCATION
+                    </span>
+
+                    <p>
+                        Alang-Alang, Leyte
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+
+
+            <form class="contact-form" id="contactForm">
+
+
+                <div class="form-group">
+
+                    <label for="name">
+                        Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Your name"
+                        required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Your email"
+                        required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="message">
+                        Message
+                    </label>
+
+                    <textarea
+                        id="message"
+                        placeholder="Your message"
+                        required></textarea>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="btn">
+
+                    Send Message
+
+                </button>
+
+
+            </form>
+
+
+        </div>
+
+    </section>
+
+
+    <footer>
+
+        <h3>
+            Anna Joy
+        </h3>
+
+        <p>
+            Information Technology Student
+        </p>
+
+        <p>
+            © 2026 Anna Joy. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <script>
+
+
+        const menuBtn =
+            document.getElementById("menuBtn");
+
+        const navLinks =
+            document.getElementById("navLinks");
+
+
+        menuBtn.addEventListener(
+            "click",
+            function () {
+
+                navLinks.classList.toggle("active");
+
+            }
+        );
+
+
+        document.querySelectorAll(
+            ".nav-links a"
+        ).forEach(function (link) {
+
+            link.addEventListener(
+                "click",
+                function () {
+
+                    navLinks.classList.remove("active");
+
+                }
+            );
+
+        });
+
+
+        const contactForm =
+            document.getElementById("contactForm");
+
+
+        contactForm.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+                alert(
+                    "Thank you for your message!"
+                );
+
+                contactForm.reset();
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>
